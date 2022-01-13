@@ -1,6 +1,7 @@
 import pygame.image
 import pygame
 import math
+import os
 
 pygame.init()
 
@@ -10,6 +11,7 @@ BLACK = (0, 0, 0)
 screen = pygame.display.set_mode((1920, 1080))
 road = [(100, 100), (200, 200), (100, 100), (910, 500), (658, 500), (237, 500)]
 clock = pygame.time.Clock()
+ROOT = os.getcwd()
 
 
 class Warrior:
@@ -21,14 +23,14 @@ class Warrior:
         self.hp = 500
         self.place = self.x, self.y = x, y
         self.bounty = 100
-        self.image = pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaur.png')
+        self.image = pygame.image.load(ROOT + '/skins/minotaur.png')
         self.rect = self.image.get_rect(topleft=self.place)
-        self.anileft = [pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaurLeft.png'),
-                        pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaurLeft(2.png'),
-                        pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaurLeft(3).png')]
-        self.aniright = [pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaur.png'),
-                         pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaur(2.png'),
-                         pygame.image.load('/Users/kompas/TowerOfDifence/towdef/npcs/skins/minotaurRight(3).png')]
+        self.anileft = [pygame.image.load(ROOT + '/skins/minotaurLeft(1.2).png'),
+                        pygame.image.load(ROOT + '/skins/minotaurLeft.png'),
+                        pygame.image.load(ROOT + '/skins/minotaurLeft(1.2).png')]
+        self.aniright = [pygame.image.load(ROOT + '/skins/minotaur.png'),
+                         pygame.image.load(ROOT + '/skins/minotaurRight(1.2).png'),
+                         pygame.image.load(ROOT + '/skins/minotaurRight(1.1).png')]
         self.step = 0
 
     def draw(self):
