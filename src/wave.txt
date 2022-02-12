@@ -1,0 +1,3 @@
+minotaur10 cat15 archer20
+minotaur30
+cat30 archer15
